@@ -1,3 +1,5 @@
+# Fit a straight line, of the form y=m*x+b
+
 import tensorflow as tf
 
 xs = [ 0.00,  1.00,  2.00, 3.00, 4.00, 5.00, 6.00, 7.00] # Features
