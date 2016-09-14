@@ -26,7 +26,7 @@ w = tf.Variable(tf.zeros([_NUM_FEATURES, _NUM_CLASSES]))
 b = tf.Variable(tf.zeros([_NUM_CLASSES]))
 
 # define activation function - simple matrix multiply plus translation
-y = tf.nn.softmax(tf.matmul(inp, weights) + bias)
+y = tf.nn.softmax(tf.matmul(inp, w) + b)
 y_ = tf.placeholder(tf.float32, [None, _NUM_CLASSES]) # y_ refers to prediction; 1-hot encoding means prediction is a 3-unit vector
 cross_entropy = -tf.reduce_sum(y_*tf.log(y)) # cost function
 
