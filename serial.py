@@ -36,7 +36,7 @@ Something you just have to do.
 initializer_operation = tf.global_variables_initializer()
 
 '''
-Train model.
+All calculations are done in a session.
 '''
 with tf.Session() as session:
 
