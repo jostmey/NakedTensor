@@ -22,6 +22,10 @@ This script goes a step farther than `serial.py` although it actually requires f
 
 You see, each point of data is treated as being independent and identically sampled. Because each point of data is assumed to be independent, the calculations are too. When you use tensors, each point of data is run on separate computing cores. There are 8 points of data, so if you have a computer with eight cores it should run almost eight times faster. 
 
+## BigData.py
+
+Coming soon!
+
 ## Requirements
 
  * TensorFlow (https://www.tensorflow.org/)
