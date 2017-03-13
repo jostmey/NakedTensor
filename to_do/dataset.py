@@ -1,3 +1,6 @@
+# License: See LICENSE
+# Generate data
+
 import numpy as np
 import matplotlib.pyplot as plt
 
