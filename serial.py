@@ -6,14 +6,13 @@ xs = [ 0.00,  1.00,  2.00, 3.00, 4.00, 5.00, 6.00, 7.00] # Features
 ys = [-0.82, -0.94, -0.12, 0.26, 0.39, 0.64, 1.02, 1.00] # Labels
 
 '''
-With enough iterations, initial weights dont matter since our cost function is convex.
+Initial guesses, which will be refined by TensorFlow.
 '''
 m_initial = -0.5 # Initial guesses
 b_initial =  1.0
 
-
 '''
-Define free variables to be solved. We will be taking partial derivatives of m and b with respect to j (cost).
+Define free variables to be solved.
 '''
 m = tf.Variable(m_initial) # Parameters
 b = tf.Variable(b_initial)
