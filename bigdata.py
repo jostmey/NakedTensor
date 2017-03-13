@@ -1,12 +1,13 @@
 # Fit a straight line, of the form y=m*x+b
 
 import tensorflow as tf
+import numpy as np
 
 '''
 Your dataset.
 '''
-xs = [ 0.00,  1.00,  2.00, 3.00, 4.00, 5.00, 6.00, 7.00] # Features
-ys = [-0.82, -0.94, -0.12, 0.26, 0.39, 0.64, 1.02, 1.00] # Labels
+xs = np.linspace(0.0, 8.0, 8000000) # 8-million features
+ys = 0.3*xs-0.8+np.random.normal(scale=0.25, size=len(xs)) # 8-million labels
 
 '''
 Initial guesses, which will be refined by TensorFlow.
@@ -21,10 +22,17 @@ m = tf.Variable(m_initial) # Parameters
 b = tf.Variable(b_initial)
 
 '''
+Define placeholders for big data.
+'''
+_BATCH = 8 # 8-million datapoints only 8 points at a time.
+xs_placeholder = tf.placeholder(tf.float32, [_BATCH])
+ys_placeholder = tf.placeholder(tf.float32, [_BATCH]) 
+
+'''
 Define the error between the data and the model as a tensor (distributed computing).
 '''
-ys_model = m*xs+b # Tensorflow knows this is a vector operation
-total_error = tf.reduce_sum((ys-ys_model)**2) # Sum up every item in the vector
+ys_model = m*xs_placeholder+b # Tensorflow knows this is a vector operation
+total_error = tf.reduce_sum((ys_placeholder-ys_model)**2) # Sum up every item in the vector
 
 '''
 Once cost function is defined, create gradient descent optimizer.
@@ -43,9 +51,14 @@ with tf.Session() as session:
 
 	session.run(initializer_operation)
 
-	_EPOCHS = 10000 # number of "sweeps" across data
+	_EPOCHS = 10000 # Number of "sweeps" across data
 	for iteration in range(_EPOCHS):
-		session.run(optimizer_operation)
+		random_indices = np.random.randint(len(xs), size=_BATCH) # Randomly sample the data
+		feed = {
+			xs_placeholder: xs[random_indices],
+			ys_placeholder: ys[random_indices]
+		}
+		session.run(optimizer_operation, feed_dict=feed)
 
 	print('Slope:', m.eval(), 'Intercept:', b.eval())
 

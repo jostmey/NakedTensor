@@ -2,6 +2,9 @@
 
 import tensorflow as tf
 
+'''
+Your dataset.
+'''
 xs = [ 0.00,  1.00,  2.00, 3.00, 4.00, 5.00, 6.00, 7.00] # Features
 ys = [-0.82, -0.94, -0.12, 0.26, 0.39, 0.64, 1.02, 1.00] # Labels
 
