@@ -37,6 +37,7 @@ That's it. Hopefully you found this tutorial enlightening.
 
 ## Requirements
 
- * TensorFlow (https://www.tensorflow.org/)
  * Python3 (https://www.python.org/)
+ * TensorFlow (https://www.tensorflow.org/)
+ * NumPy (http://www.numpy.org/)
 
