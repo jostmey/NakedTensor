@@ -31,7 +31,7 @@ There are two major changes in the code. The first is bookkeeping. Because of al
 
 ## Conclusion
 
-As you worked through the scripts, you hopefully saw how the error can be anything you wanted it to be. It could be the error between a set of images and convolutional neural network. It could be the error between classical music and a recurrent neural network. Let your imagination run wild. Once the error is defined, you can use *TensorFlow* to try an minimize it.
+As you worked through the scripts, you hopefully saw how the error can be anything you wanted it to be. It could be the error between a set of images and a convolutional neural network. It could be the error between classical music and a recurrent neural network. Let your imagination run wild. Once the error is defined, you can use *TensorFlow* to try an minimize it.
 
 That's it. Hopefully you found this tutorial enlightening.
 
