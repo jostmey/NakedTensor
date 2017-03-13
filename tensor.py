@@ -18,7 +18,7 @@ m = tf.Variable(m_initial) # Parameters
 b = tf.Variable(b_initial)
 
 '''
-Define the error between the data and the model as a tensor (distributed computing)
+Define the error between the data and the model as a tensor (distributed computing).
 '''
 ys_model = m*xs+b # Tensorflow knows this is a vector operation
 total_error = tf.reduce_sum((ys-ys_model)**2) # Sum up every item in the vector
