@@ -6,7 +6,7 @@ In each example, a straight line is fit to some data. The slope and y-intercept 
 
 ![alt text](artwork/line_of_best_fit.jpg "Straight line fitted to data")
 
-After creating the required variables, the error between the data and the line is *defined*. The definition of the error is then plugged into the optimizer. TensorFlow is then started and the optimizer is repeatedly called. This iteratively fits the line to the data.
+After creating the required variables, the error between the data and the line is *defined*. The definition of the error is then plugged into the optimizer. TensorFlow is then started and the optimizer is repeatedly called. This iteratively fits the line to the data by minimizing the error.
 
 Read the scripts in this order:
  * serial.py
@@ -15,7 +15,7 @@ Read the scripts in this order:
 
 ## Serial.py
 
-The purpose of this script is to illustrate the nuts and bolts of a TensorFlow model. The script makes it easy to understand how the model is put together. The error between the data and the model is defined using a for loop. Because of the way the error is defined, the calculation runs in serial.
+The purpose of this script is to illustrate the nuts and bolts of a TensorFlow model. The script makes it easy to understand how the model is put together. The error between the data and the line is defined using a for loop. Because of the way the error is defined, the calculation runs in serial.
 
 ## Tensor.py
 
@@ -29,12 +29,14 @@ You are one buzzword away from being a professional. Instead of fitting a line t
 
 There are two major changes in the code. The first is bookkeeping. Because of all the data, the error must be defined using placeholders instead of actual data. Later in the code, the data is feed through the placeholders. The second change is that because we have so much data, only a sample of data is feed into the model at any given time. Each time an operation of gradient descent is called, a new sample of data is feed into the model. By sampling the dataset, *TensorFlow* never has to deal with the entire dataset at once. This works surprisingly well and there is theory that says it is okay to do this. There are a few conditions that the theory says are important, like the step size much decrease with each iteration. For now, who cares! It works.
 
+## Conclusion
+
+As you worked through the scripts, you hopefully saw how the error can be anything you wanted it to be. It could be the error between a set of images and convolutional neural network. It could be the error between classical music and a recurrent neural network. Let your imagination run wild. Once the error is defined, you can use *TensorFlow* to try an minimize it.
+
+That's it. Hopefully you found this tutorial enlightening.
+
 ## Requirements
 
  * TensorFlow (https://www.tensorflow.org/)
  * Python3 (https://www.python.org/)
-
-## Thanks
-
-That's it. Hopefully you found this tutorial enlightening.
 
