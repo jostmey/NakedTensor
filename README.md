@@ -6,7 +6,7 @@ In each example, a straight line is fit to some data. The slope and y-intercept 
 
 ![alt text](artwork/line_of_best_fit.jpg "Straight line fitted to data")
 
-After creating the required variables, the error between the data and the line is *defined*. The definition of the error is then plugged into the optimizer. TensorFlow is then started and the optimizer is repeatedly called. This iteratively fits the line to the data by minimizing the error.
+After creating the required variables, the error between the data and the line is *defined*. The definition of the error is plugged into the optimizer. TensorFlow is then started and the optimizer is repeatedly called. This iteratively fits the line to the data by minimizing the error.
 
 Read the scripts in this order:
  * serial.py
