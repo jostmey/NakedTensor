@@ -15,7 +15,7 @@ Read the scripts in this order:
 
 ## Serial.py
 
-The purpose of this script is to illustrate the nuts and bolts of a TensorFlow model. The script makes it easy to understand how the model is put together. The error between the data and the line is defined using a for loop. Because of the way the error is defined, the calculation runs in serial.
+The purpose of this script is to illustrate the nuts and bolts of a TensorFlow model. The script makes it easy to understand how the model is put together. The error between the data and the model is defined using a for loop. Because of the way the error is defined, the calculation runs in serial.
 
 ## Tensor.py
 
