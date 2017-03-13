@@ -1,3 +1,4 @@
+# License: See LICENSE
 # Fit a straight line, of the form y=m*x+b
 
 import tensorflow as tf
