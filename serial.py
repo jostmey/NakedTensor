@@ -25,9 +25,9 @@ b = tf.Variable(b_initial)
 Define the error between the data and the model one point at a time (slow).
 '''
 total_error = 0.0
-for i in range(len(xs)):
-	y_model = m*xs[i]+b # Output of the model aka yhat
-	total_error += (ys[i]-y_model)**2 # Difference squared - this is the "cost" to be minimized
+for x, y in zip(xs, ys):
+	y_model = m*x + b # Output of the model aka yhat
+	total_error += (y-y_model)**2 # Difference squared - this is the "cost" to be minimized
 
 '''
 Once cost function is defined, create gradient descent optimizer.
