@@ -11,6 +11,7 @@ After creating the required variables, the error between the data and the line i
 Read the scripts in this order:
  * serial.py
  * tensor.py
+ * bigdata.py
 
 ## Serial.py
 
@@ -24,7 +25,7 @@ You see, each point of data is treated as being independent and identically samp
 
 ## BigData.py
 
-Coming soon!
+You are one buzzword away from being a professional. Instead of fitting a line to just eight datapoints, we will now fit a line to 8-million datapoints. Welcome to **big data**. There are two major changes in the code. The first is bookkeeping. Because of all the data, the error must be defined using placeholders instead of actual data. Later in the code, the data is feed through the placeholders. The second change is that because we have so much data, only a sample of data is feed into the model at any given time. Each time an operation of gradient descent is called, a new sample of data is feed into the model. By sampling the dataset, *TensorFlow* never has to deal with the entire dataset at once. This works surprisingly well and there is theory that says it is okay to do this. There are a few conditions that the theory says are important, like the step size much decrease with each iteration, but who cares! It works.
 
 ## Requirements
 
