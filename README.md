@@ -1,6 +1,6 @@
 # Naked Tensor
 
-This is a bare bottom example of *TensorFlow*, a machine learning package published by Google. You will not find a simpler introduction to it.
+This is a bare bones example of *TensorFlow*, a machine learning package published by Google. You will not find a simpler introduction to it.
 
 In each example, a straight line is fit to some data. Values for the slope and y-intercept of the line that best fit the data are determined using gradient descent. If you do not know about gradient descent, check out the Wikipedia page ([link](https://en.wikipedia.org/wiki/Gradient_descent)).
 
