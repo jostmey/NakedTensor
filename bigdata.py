@@ -24,7 +24,7 @@ b = tf.Variable(b_initial)
 '''
 Define placeholders for big data.
 '''
-_BATCH = 8 # 8-million datapoints only 8 points at a time.
+_BATCH = 8 # Use only eight points at a time.
 xs_placeholder = tf.placeholder(tf.float32, [_BATCH])
 ys_placeholder = tf.placeholder(tf.float32, [_BATCH]) 
 
