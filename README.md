@@ -2,7 +2,7 @@
 
 This is a bare bones example of *TensorFlow*, a machine learning package published by Google. You will not find a simpler introduction to it.
 
-In each example, a straight line is fit to some data. Values for the slope and y-intercept of the line that best fit the data are determined using gradient descent. If you do not know about gradient descent, check out the Wikipedia page ([link](https://en.wikipedia.org/wiki/Gradient_descent)).
+In each example, a straight line is fit to some data. Values for the slope and y-intercept of the line that best fit the data are determined using gradient descent. If you do not know about gradient descent, check out the [Wikipedia page](https://en.wikipedia.org/wiki/Gradient_descent).
 
 ![alt text](artwork/line_of_best_fit.jpg "Straight line fitted to data")
 
@@ -27,7 +27,7 @@ You see, each point of data is treated as being independent and identically samp
 
 You are one buzzword away from being a professional. Instead of fitting a line to just eight datapoints, we will now fit a line to 8-million datapoints. Welcome to **big data**.
 
-There are two major changes in the code. The first is bookkeeping. Because of all the data, the error must be defined using placeholders instead of actual data. Later in the code, the data is fed through the placeholders. The second change is that because we have so much data, only a sample of data is fed into the model at any given time. Each time an operation of gradient descent is called, a new sample of data is fed into the model. By sampling the dataset, *TensorFlow* never has to deal with the entire dataset at once. This works surprisingly well and there is theory that says it is okay to do this ([link](https://en.wikipedia.org/wiki/Stochastic_gradient_descent)). There are a few conditions that the theory says are important, like the step size must decrease with each iteration. For now, who cares! It works.
+There are two major changes in the code. The first is bookkeeping. Because of all the data, the error must be defined using placeholders instead of actual data. Later in the code, the data is fed through the placeholders. The second change is that because we have so much data, only a sample of data is fed into the model at any given time. Each time an operation of gradient descent is called, a new sample of data is fed into the model. By sampling the dataset, *TensorFlow* never has to deal with the entire dataset at once. This works surprisingly well and there is [theory](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) that says it is okay to do this. There are a few conditions that the theory says are important, like the step size must decrease with each iteration. For now, who cares! It works.
 
 ## Conclusion
 
@@ -37,6 +37,6 @@ That's it. Hopefully you found this tutorial enlightening.
 
 ## Requirements
 
- * Python3 (https://www.python.org/)
- * TensorFlow (https://www.tensorflow.org/)
- * NumPy (http://www.numpy.org/)
+ * [Python3](https://www.python.org/)
+ * [TensorFlow](https://www.tensorflow.org/)
+ * [NumPy](http://www.numpy.org/)
