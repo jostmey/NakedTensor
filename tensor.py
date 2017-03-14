@@ -33,7 +33,7 @@ Once cost function is defined, create gradient descent optimizer.
 optimizer_operation = tf.train.GradientDescentOptimizer(learning_rate=0.001).minimize(total_error) # Does one step
 
 '''
-Something you just have to do.
+Create operator for initialization.
 '''
 initializer_operation = tf.global_variables_initializer()
 
@@ -42,11 +42,12 @@ All calculations are done in a session.
 '''
 with tf.Session() as session:
 
-	session.run(initializer_operation)
+	session.run(initializer_operation) # Call operator
 
 	_EPOCHS = 10000 # number of "sweeps" across data
 	for iteration in range(_EPOCHS):
-		session.run(optimizer_operation)
+		session.run(optimizer_operation) # Call operator
 
-	print('Slope:', m.eval(), 'Intercept:', b.eval())
+	slope, intercept = session.run((m, b)) # Call "m" and "b", which are operators
+	print('Slope:', slope, 'Intercept:', intercept)
 
